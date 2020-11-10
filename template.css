@@ -1,0 +1,125 @@
+*, html {
+    top: 0;
+    left: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: #181818;
+    font-family: Verdana, sans-serif;
+}
+
+.clrBth { clear: both; }
+.fltLft { float: left; }
+
+.topbar {
+    width: 100%;
+    height: 45px;
+    float: left;
+    clear: both;
+    padding: 10px;
+    background: #000;
+}
+
+    .topbar .item {
+        width: 50%;
+        text-align: center;
+        color: white;
+        float: left;
+    }
+
+    .topbar .item.active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+#appsContainer {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.appContainer {
+    display: none;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+    .appContainer.active {
+        display: block;
+    }
+
+    .appContainer h1 {
+        color: white;
+        width: 100%;
+        text-align: center;
+        float: left;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+/* TODO LIST STYLING */
+.todoList {
+    clear: both;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+    input#todoSearch {
+        background: #002f00;
+        width: 85%;
+        margin: 0 auto;
+        display: block;
+        height: 39px;
+        margin-bottom: 25px;
+        padding: 10px;
+        color: white;
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .todoItem {
+        width: 100%;
+        color: white;
+        float: left;
+        padding: 10px 5px;
+        text-align: center;
+        background: darkgreen;
+        margin-bottom: 20px;
+    }
+
+    .todoItem .deleteMe {
+        float: right;
+        color: pink;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .addAnotherTodo {
+        color: white;
+        clear: both;
+        width: 85%;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        font-style: italic;
+    }
+
+    .createField {
+        background: #002f00;
+        width: 85%;
+        margin: 0 auto;
+        display: block;
+        height: 39px;
+        margin-top: 15px;
+        padding: 10px;
+        color: white;
+        font-size: 17px;
+        text-align: center;
+    }

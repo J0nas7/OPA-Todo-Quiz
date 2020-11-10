@@ -1,0 +1,22 @@
+[
+    {
+        "question": "How do you give a ninja directions?",
+        "wrong":    "Show them a map",
+        "right":    "Don't worry, the ninja will find you"
+    },
+    {
+        "question": "If a ninja has 3 apples, then gives one to Mario & one to Yoshi, how many apples does the ninja have left?",
+        "wrong":    "1 apple",
+        "right":    "3 apples, and two corpses"
+    },
+    {
+        "question": "How do you know when you've met a ninja?",
+        "wrong":    "You'll recognize the outfit",
+        "right":    "The grim reaper will tell you"
+    },
+    {
+        "question": "What's a ninja's favourite array method?",
+        "wrong":    "forEach()",
+        "right":    "slice()"
+    }
+]

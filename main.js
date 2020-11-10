@@ -1,7 +1,22 @@
-let appActive = "todo";
-document.getElementById(appActive+"App").classList.add("active");
-document.getElementById(appActive+"Btn").classList.add("active");
+// APP SWITCHER
+function activateApp(appActive) {
+    let topbarBtns = document.querySelectorAll(".topbar .item");
+    topbarBtns.forEach((btn) => {
+        btn.classList.remove("active");
+    });
+    let apps = document.querySelectorAll(".appContainer");
+    apps.forEach((app) => {
+        app.classList.remove("active");
+    });
 
+    if (this.id) { appActive = this.id.slice(0, 4); }
+
+    document.getElementById(appActive+"App").classList.add("active");
+    document.getElementById(appActive+"Btn").classList.add("active");
+}
+activateApp("todo");
+document.getElementById("todoBtn").addEventListener("click", activateApp, false);
+document.getElementById("quizBtn").addEventListener("click", activateApp, false);
 
 
 
@@ -14,6 +29,7 @@ let todoList = [
     "do homework"
 ];
 
+// TODO LIST FUNCTIONALITIES
 function updateTodoList() {
     document.getElementById("todoList").innerHTML = "";
     theTodos = todoList;
@@ -69,3 +85,54 @@ createInput.addEventListener('keypress', function (e) {
         }
     }
 });
+
+
+// QUIZ FETCH
+var questions = [];
+fetch("ninjas.json")
+.then((response) => response.json())
+.then((data)=>{
+    questions = data;
+    printQuestions();
+})
+.catch((e)=>{
+    console.log("ERR: "+e.message);
+});
+
+function printQuestions() {
+    var questionsHTML = "";
+    var questionNum = 1;
+    questions.forEach((question) => {
+        questionsHTML +=    "<div class='question'>"+
+                                "<strong>"+question.question+"</strong><br>"+
+                                "<input type='radio' name='test"+questionNum+"' value='no' /> "+question.wrong+"<br>"+
+                                "<input type='radio' name='test"+questionNum+"' value='yes' /> "+question.right+
+                            "</div>";
+        questionNum++;
+    });
+    document.querySelector(".theQuestions").innerHTML = questionsHTML;
+}
+
+function ninjaLator() {
+    var result = 0;
+    var answers = [];
+    for (var i = 1; i < 5; i++) {
+        answers[i] = document.querySelector("[name=test"+i+"]:checked").value;
+        if (answers[i] == "yes") result += 25;
+    }
+    document.querySelector("#quizResult").innerHTML = "0%";
+    document.querySelector("#quizResult").setAttribute("countTo", result);
+    document.querySelector(".quizResult").style.display = "block";
+    ninjaCounter();
+}
+function ninjaCounter() {
+    var theNumber = -1;
+    document.querySelector("#quizResult").innerHTML = "0%";
+    var countTo = Number(document.querySelector("#quizResult").getAttribute("countTo"));
+    var myCounter = setInterval(() => {
+        theNumber++;
+        document.querySelector("#quizResult").innerHTML = theNumber+"%";
+        if (theNumber == countTo) clearInterval(myCounter);
+    }, 25);
+}
+document.querySelector("#quizSubmit").addEventListener("click", ninjaLator, false);

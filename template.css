@@ -123,3 +123,51 @@ body {
         font-size: 17px;
         text-align: center;
     }
+
+/* NINJA QUIZ STYLING */
+.quizResult {
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 30px;
+    display: none;
+}
+
+    .quizResult #quizResult {
+        font-size: 36px;
+        color: darkorange;
+    }
+
+.ninjaQuiz {
+    background: #005064;
+    clear: both;
+    width: 85%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 0px;
+    color: white;
+    padding: 10px;
+}
+.ninjaQuiz:after {
+    clear: both;
+}
+
+.theQuestions {
+    display: inline-block;
+}
+
+.theQuestions .question {
+    margin-top: 15px;
+    float: left;
+    clear: both;
+}
+
+input#quizSubmit {
+    display: block;
+    background: #027490;
+    color: white;
+    padding: 4px;
+    font-size: 17px;
+    margin-top: 10px;
+}
